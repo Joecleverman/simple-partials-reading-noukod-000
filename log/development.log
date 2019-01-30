@@ -832,3 +832,16 @@ Processing by PostsController#create as HTML
   [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors"  ORDER BY "authors"."id" ASC LIMIT 1
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Drake"], ["description", "A bastard son of the king"], ["author_id", 1], ["created_at", "2019-01-30 15:56:16.126014"], ["updated_at", "2019-01-30 15:56:16.126014"]]
+  [1m[36m (2073.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://142.93.56.73:55843/posts/13
+Completed 302 Found in 2090ms (ActiveRecord: 2074.5ms)
+
+
+Started GET "/posts/13" for 190.102.85.235 at 2019-01-30 15:56:18 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered authors/_author.html.erb (0.3ms)
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 27ms (Views: 9.9ms | ActiveRecord: 0.4ms)
